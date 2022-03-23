@@ -1,0 +1,32 @@
+{
+  "version": "16.0.0",
+  "files": {
+    "d0ef9072b723a4a5485afa8e1133ada8bdf448687400736fa698c91b3109ad78": {
+      "source": {
+        "path": "asset.d0ef9072b723a4a5485afa8e1133ada8bdf448687400736fa698c91b3109ad78",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "d0ef9072b723a4a5485afa8e1133ada8bdf448687400736fa698c91b3109ad78.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "4a30368b6f1c7bab5e6857b605a20752c59f11aed3e4fbb5a54dc343b005702a": {
+      "source": {
+        "path": "AppSyncGraphQlStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "4a30368b6f1c7bab5e6857b605a20752c59f11aed3e4fbb5a54dc343b005702a.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

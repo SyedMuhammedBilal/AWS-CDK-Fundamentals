@@ -1,0 +1,429 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "AppSyncGraphQlStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "AppSyncGraphQlStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "AppSyncGraphQlStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "AppSyncGraphQlStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4a30368b6f1c7bab5e6857b605a20752c59f11aed3e4fbb5a54dc343b005702a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "AppSyncGraphQlStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "AppSyncGraphQlStack.assets"
+      ],
+      "metadata": {
+        "/AppSyncGraphQlStack/Api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiF70053CD",
+            "trace": [
+              "new GraphqlApi (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi.ts:457:16)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:42:17)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/Api/Schema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiSchema510EECD7",
+            "trace": [
+              "Schema.bind (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/schema.ts:80:21)",
+              "new GraphqlApi (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi.ts:473:39)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:42:17)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/Api/lambdaDatasource/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceServiceRole2CA75790",
+            "trace": [
+              "new Role (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-iam/lib/role.ts:358:18)",
+              "new BaseDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:120:47)",
+              "new BackedDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:168:5)",
+              "new LambdaDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:301:5)",
+              "GraphqlApi.addLambdaDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi-base.ts:219:12)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:70:36)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/Api/lambdaDatasource/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceServiceRoleDefaultPolicy3A97E34D",
+            "trace": [
+              "new Policy (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-iam/lib/role.ts:399:28)",
+              "Function.addToPrincipal (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-iam/lib/grant.ts:164:61)",
+              "Function.addToPrincipalOrResource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-iam/lib/grant.ts:115:26)",
+              "Function.grantInvoke (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:352:25)",
+              "new LambdaDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:307:26)",
+              "GraphqlApi.addLambdaDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi-base.ts:219:12)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:70:36)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/Api/lambdaDatasource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasource2C776EE2",
+            "trace": [
+              "new BaseDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:124:15)",
+              "new BackedDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:168:5)",
+              "new LambdaDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:301:5)",
+              "GraphqlApi.addLambdaDataSource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi-base.ts:219:12)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:70:36)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/Api/lambdaDatasource/QueryhelloResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceQueryhelloResolver75AEFCAD",
+            "trace": [
+              "new Resolver (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/resolver.ts:108:21)",
+              "LambdaDataSource.createResolver (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:139:12)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:73:24)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/Api/lambdaDatasource/QuerymyCustomMsgResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceQuerymyCustomMsgResolver185491AD",
+            "trace": [
+              "new Resolver (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/resolver.ts:108:21)",
+              "LambdaDataSource.createResolver (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:139:12)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:77:24)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/GraphQLApi": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GraphQLApi",
+            "trace": [
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:52:5)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/GraphQLApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GraphQLApiKey",
+            "trace": [
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:56:5)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/MyFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFunctionServiceRole3C357FF2",
+            "trace": [
+              "new Role (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:358:18)",
+              "new Function (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-lambda/lib/function.ts:663:31)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:60:32)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/MyFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFunction3BAA72D1",
+            "trace": [
+              "new Function (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/aws-lambda/lib/function.ts:741:35)",
+              "new AppSyncGraphQlStack (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/lib/step03-app_sync-graph_ql-stack.ts:60:32)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/bin/step03-app_sync-graph_ql.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:640:26)",
+              "process.emit (node:events:520:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:31:27)",
+              "/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:640:26)",
+              "process.emit (node:events:520:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:463:17)",
+              "DefaultStackSynthesizer.synthesize (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:397:7)",
+              "/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:184:29",
+              "visit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "synthesizeTree (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:176:3)",
+              "Object.synthesize (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:39:3)",
+              "App.synth (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:640:26)",
+              "process.emit (node:events:520:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ],
+        "/AppSyncGraphQlStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:473:3)",
+              "DefaultStackSynthesizer.synthesize (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:397:7)",
+              "/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:184:29",
+              "visit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "synthesizeTree (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:176:3)",
+              "Object.synthesize (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/private/synthesis.ts:39:3)",
+              "App.synth (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:640:26)",
+              "process.emit (node:events:520:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/vtech/Desktop/aws-cdk/step03-AppSync-GraphQL/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "AppSyncGraphQlStack"
+    }
+  }
+}

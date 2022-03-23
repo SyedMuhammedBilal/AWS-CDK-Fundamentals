@@ -1,0 +1,467 @@
+{
+  "Resources": {
+    "ApiF70053CD": {
+      "Type": "AWS::AppSync::GraphQLApi",
+      "Properties": {
+        "AuthenticationType": "AWS_IAM",
+        "Name": "demo"
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/Api/Resource"
+      }
+    },
+    "ApiSchema510EECD7": {
+      "Type": "AWS::AppSync::GraphQLSchema",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ApiF70053CD",
+            "ApiId"
+          ]
+        },
+        "Definition": "type Query {\n    hello: String,\n    myCustomMsg(msg: String!): String!\n}"
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/Api/Schema"
+      }
+    },
+    "ApilambdaDatasourceServiceRole2CA75790": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "appsync.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/Api/lambdaDatasource/ServiceRole/Resource"
+      }
+    },
+    "ApilambdaDatasourceServiceRoleDefaultPolicy3A97E34D": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "MyFunction3BAA72D1",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "ApilambdaDatasourceServiceRoleDefaultPolicy3A97E34D",
+        "Roles": [
+          {
+            "Ref": "ApilambdaDatasourceServiceRole2CA75790"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/Api/lambdaDatasource/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "ApilambdaDatasource2C776EE2": {
+      "Type": "AWS::AppSync::DataSource",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ApiF70053CD",
+            "ApiId"
+          ]
+        },
+        "Name": "lambdaDatasource",
+        "Type": "AWS_LAMBDA",
+        "LambdaConfig": {
+          "LambdaFunctionArn": {
+            "Fn::GetAtt": [
+              "MyFunction3BAA72D1",
+              "Arn"
+            ]
+          }
+        },
+        "ServiceRoleArn": {
+          "Fn::GetAtt": [
+            "ApilambdaDatasourceServiceRole2CA75790",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/Api/lambdaDatasource/Resource"
+      }
+    },
+    "ApilambdaDatasourceQueryhelloResolver75AEFCAD": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ApiF70053CD",
+            "ApiId"
+          ]
+        },
+        "FieldName": "hello",
+        "TypeName": "Query",
+        "DataSourceName": "lambdaDatasource",
+        "Kind": "UNIT"
+      },
+      "DependsOn": [
+        "ApilambdaDatasource2C776EE2",
+        "ApiSchema510EECD7"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/Api/lambdaDatasource/QueryhelloResolver/Resource"
+      }
+    },
+    "ApilambdaDatasourceQuerymyCustomMsgResolver185491AD": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ApiF70053CD",
+            "ApiId"
+          ]
+        },
+        "FieldName": "myCustomMsg",
+        "TypeName": "Query",
+        "DataSourceName": "lambdaDatasource",
+        "Kind": "UNIT"
+      },
+      "DependsOn": [
+        "ApilambdaDatasource2C776EE2",
+        "ApiSchema510EECD7"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/Api/lambdaDatasource/QuerymyCustomMsgResolver/Resource"
+      }
+    },
+    "MyFunctionServiceRole3C357FF2": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/MyFunction/ServiceRole/Resource"
+      }
+    },
+    "MyFunction3BAA72D1": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+          },
+          "S3Key": "d0ef9072b723a4a5485afa8e1133ada8bdf448687400736fa698c91b3109ad78.zip"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "MyFunctionServiceRole3C357FF2",
+            "Arn"
+          ]
+        },
+        "Handler": "index.handler",
+        "MemorySize": 1536,
+        "Runtime": "nodejs14.x",
+        "Timeout": 10
+      },
+      "DependsOn": [
+        "MyFunctionServiceRole3C357FF2"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/MyFunction/Resource",
+        "aws:asset:path": "asset.d0ef9072b723a4a5485afa8e1133ada8bdf448687400736fa698c91b3109ad78",
+        "aws:asset:is-bundled": false,
+        "aws:asset:property": "Code"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/22P3U7DMAyFn4X71KOiQnDHfgQ3k4D2CUwatqxtEuJkaIry7tSZhobElc9xHJ/PNaS6eYDbmyf8pkr2wyJJ6xWkLqAcxPrTvMbgYhBLIhXm5k6bnVhbQ8FHGXigVWSjl4r1/NDroK3JgvelEaePHiE9RyO5zTMXnYXGCVJrx/KVaxZ0VyEnEZTA2cMqykGFFZLKWdTN4zVsCUHn6GQkpBePbv81Lp3mhcW9b/+6Tu7VhGJbuDYYsPtlv3J80nhU/nIe639wxZsdtTyxPas8ExrbKzjQ4ljfQ93MsAfSuvLRBD0paM/1ByvBD3F3AQAA"
+      },
+      "Metadata": {
+        "aws:cdk:path": "AppSyncGraphQlStack/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Outputs": {
+    "GraphQLApi": {
+      "Value": {
+        "Fn::GetAtt": [
+          "ApiF70053CD",
+          "GraphQLUrl"
+        ]
+      }
+    },
+    "GraphQLApiKey": {
+      "Value": "no Api key provided"
+    }
+  },
+  "Conditions": {
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "af-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+    }
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ],
+                  {
+                    "Ref": "BootstrapVersion"
+                  }
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+        }
+      ]
+    }
+  }
+}
