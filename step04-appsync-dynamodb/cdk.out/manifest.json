@@ -7,60 +7,584 @@
         "file": "tree.json"
       }
     },
-    "Step04AppsyncDynamodbStack.assets": {
-      "type": "cdk:asset-manifest",
-      "properties": {
-        "file": "Step04AppsyncDynamodbStack.assets.json",
-        "requiresBootstrapStackVersion": 6,
-        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
-      }
-    },
     "Step04AppsyncDynamodbStack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
         "templateFile": "Step04AppsyncDynamodbStack.template.json",
-        "validateOnSynth": false,
-        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
-        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/40efcfcd8c448ec2a9997dcb239012d6552eeffcd645855132d1b6a5fbbc2883.json",
-        "requiresBootstrapStackVersion": 6,
-        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
-        "additionalDependencies": [
-          "Step04AppsyncDynamodbStack.assets"
-        ],
-        "lookupRole": {
-          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
-          "requiresBootstrapStackVersion": 8,
-          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
-        }
+        "validateOnSynth": false
       },
-      "dependencies": [
-        "Step04AppsyncDynamodbStack.assets"
-      ],
       "metadata": {
+        "/Step04AppsyncDynamodbStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
+              "id": "f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
+              "packaging": "zip",
+              "sourceHash": "f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
+              "s3BucketParameter": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3Bucket2C7708CD",
+              "s3KeyParameter": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD",
+              "artifactHashParameter": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaArtifactHash01B9FC1D"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/construct-compat.ts:453:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:186:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:86:19)",
+              "Step04AppsyncDynamodbStack.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack.ts:680:29)",
+              "/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:91:53",
+              "withoutDeprecationWarnings (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:218:12)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:91:14)",
+              "new Asset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:152:40)",
+              "AssetCode.bind (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:285:20)",
+              "new Function (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:683:29)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:31:32)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiF70053CD",
+            "trace": [
+              "new GraphqlApi (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi.ts:457:16)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:13:17)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/Schema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiSchema510EECD7",
+            "trace": [
+              "Schema.bind (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/schema.ts:80:21)",
+              "new GraphqlApi (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi.ts:473:39)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:13:17)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/DefaultApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiDefaultApiKeyF991C37B",
+            "trace": [
+              "GraphqlApi.createAPIKey (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi.ts:629:12)",
+              "new GraphqlApi (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi.ts:479:34)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:13:17)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceServiceRole2CA75790",
+            "trace": [
+              "new Role (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/node_modules/@aws-cdk/aws-iam/lib/role.ts:358:18)",
+              "new BaseDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:120:47)",
+              "new BackedDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:168:5)",
+              "new LambdaDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:301:5)",
+              "GraphqlApi.addLambdaDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi-base.ts:219:12)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:41:36)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceServiceRoleDefaultPolicy3A97E34D",
+            "trace": [
+              "new Policy (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/node_modules/@aws-cdk/aws-iam/lib/role.ts:399:28)",
+              "Function.addToPrincipal (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-iam/lib/grant.ts:164:61)",
+              "Function.addToPrincipalOrResource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-iam/lib/grant.ts:115:26)",
+              "Function.grantInvoke (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:352:25)",
+              "new LambdaDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:307:26)",
+              "GraphqlApi.addLambdaDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi-base.ts:219:12)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:41:36)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasource2C776EE2",
+            "trace": [
+              "new BaseDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:124:15)",
+              "new BackedDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:168:5)",
+              "new LambdaDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:301:5)",
+              "GraphqlApi.addLambdaDataSource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/graphqlapi-base.ts:219:12)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:41:36)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodoResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceQuerygetTodoResolverEF7C7211",
+            "trace": [
+              "new Resolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/resolver.ts:108:21)",
+              "LambdaDataSource.createResolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:139:12)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:44:24)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationaddTodoResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceMutationaddTodoResolver8D834A94",
+            "trace": [
+              "new Resolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/resolver.ts:108:21)",
+              "LambdaDataSource.createResolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:139:12)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:48:24)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/GraphQLApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GraphQLApiEndpoint",
+            "trace": [
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:23:5)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/GraphQLApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GraphQLApiKey",
+            "trace": [
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:27:5)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/MyFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFunctionServiceRole3C357FF2",
+            "trace": [
+              "new Role (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:358:18)",
+              "new Function (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:663:31)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:31:32)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/MyFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFunctionServiceRoleDefaultPolicyB705ABD4",
+            "trace": [
+              "new Policy (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:399:28)",
+              "Function.addToPrincipal (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-dynamodb/node_modules/@aws-cdk/aws-iam/lib/grant.ts:164:61)",
+              "Table.combinedGrant (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:994:29)",
+              "Table.grantFullAccess (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:767:17)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:60:15)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/MyFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFunction3BAA72D1",
+            "trace": [
+              "new Function (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:741:35)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:31:32)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3Bucket2C7708CD",
+            "trace": [
+              "new FileAssetParameters (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:169:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:86:19)",
+              "Step04AppsyncDynamodbStack.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack.ts:680:29)",
+              "/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:91:53",
+              "withoutDeprecationWarnings (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:218:12)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:91:14)",
+              "new Asset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:152:40)",
+              "AssetCode.bind (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:285:20)",
+              "new Function (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:683:29)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:31:32)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD",
+            "trace": [
+              "new FileAssetParameters (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:169:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:86:19)",
+              "Step04AppsyncDynamodbStack.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack.ts:680:29)",
+              "/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:91:53",
+              "withoutDeprecationWarnings (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:218:12)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:91:14)",
+              "new Asset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:152:40)",
+              "AssetCode.bind (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:285:20)",
+              "new Function (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:683:29)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:31:32)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaArtifactHash01B9FC1D",
+            "trace": [
+              "new FileAssetParameters (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:169:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:86:19)",
+              "Step04AppsyncDynamodbStack.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack.ts:680:29)",
+              "/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:91:53",
+              "withoutDeprecationWarnings (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:218:12)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:91:14)",
+              "new Asset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:152:40)",
+              "AssetCode.bind (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:285:20)",
+              "new Function (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:683:29)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:31:32)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/TestTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestTable5769773A",
+            "trace": [
+              "new Table (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:1180:18)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:53:23)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
         "/Step04AppsyncDynamodbStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "CDKMetadata"
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:640:26)",
+              "process.emit (node:events:520:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
           }
         ],
         "/Step04AppsyncDynamodbStack/CDKMetadata/Condition": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "CDKMetadataAvailable"
-          }
-        ],
-        "/Step04AppsyncDynamodbStack/BootstrapVersion": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BootstrapVersion"
-          }
-        ],
-        "/Step04AppsyncDynamodbStack/CheckBootstrapVersion": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CheckBootstrapVersion"
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:31:27)",
+              "/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:640:26)",
+              "process.emit (node:events:520:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
           }
         ]
       },

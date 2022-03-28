@@ -21,10 +21,16 @@
   },
   "dependencies": {
     "@aws-cdk/aws-appsync": "^1.149.0",
+    "@aws-cdk/aws-cloudfront": "^1.149.0",
+    "@aws-cdk/aws-cloudfront-origins": "^1.149.0",
     "@aws-cdk/aws-dynamodb": "^1.149.0",
     "@aws-cdk/aws-lambda": "^1.149.0",
+    "@aws-cdk/aws-s3": "^1.149.0",
+    "@aws-cdk/aws-s3-deployment": "^1.149.0",
     "@aws-cdk/core": "^1.149.0",
+    "@types/aws-sdk": "^2.7.0",
     "aws-cdk-lib": "2.16.0",
+    "aws-sdk": "^2.1101.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.16"
   }

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
-import * as cdk from 'aws-cdk-lib';
+import * as cdk from '@aws-cdk/core';
 import { Step04AppsyncDynamodbStack } from '../lib/step04-appsync-dynamodb-stack';
 
-const app = new cdk.App();
+const app: any = new cdk.App();
 new Step04AppsyncDynamodbStack(app, 'Step04AppsyncDynamodbStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,

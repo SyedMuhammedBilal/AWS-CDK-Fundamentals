@@ -1,0 +1,12 @@
+type Query {
+    getTodo(id: String): Todo
+}
+
+type Todo {
+    id: String,
+    description: String
+}
+
+type Mutation {
+    addTodo(description: String): String
+}
