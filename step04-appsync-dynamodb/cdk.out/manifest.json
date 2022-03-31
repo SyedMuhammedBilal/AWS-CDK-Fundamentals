@@ -19,13 +19,13 @@
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
-              "id": "f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
+              "path": "asset.0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae",
+              "id": "0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae",
               "packaging": "zip",
-              "sourceHash": "f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
-              "s3BucketParameter": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3Bucket2C7708CD",
-              "s3KeyParameter": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD",
-              "artifactHashParameter": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaArtifactHash01B9FC1D"
+              "sourceHash": "0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae",
+              "s3BucketParameter": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3BucketF43B505B",
+              "s3KeyParameter": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3VersionKey08F67DA3",
+              "artifactHashParameter": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeArtifactHash707A88DD"
             },
             "trace": [
               "ConstructNode.addMetadata (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/construct-compat.ts:453:92)",
@@ -229,10 +229,10 @@
             ]
           }
         ],
-        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodoResolver/Resource": [
+        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodosResolver/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ApilambdaDatasourceQuerygetTodoResolverEF7C7211",
+            "data": "ApilambdaDatasourceQuerygetTodosResolver86A5E502",
             "trace": [
               "new Resolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/resolver.ts:108:21)",
               "LambdaDataSource.createResolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:139:12)",
@@ -264,6 +264,60 @@
               "new Resolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/resolver.ts:108:21)",
               "LambdaDataSource.createResolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:139:12)",
               "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:48:24)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationupdateTodoResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceMutationupdateTodoResolverB15883FB",
+            "trace": [
+              "new Resolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/resolver.ts:108:21)",
+              "LambdaDataSource.createResolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:139:12)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:52:24)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationdeleteTodoResolver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApilambdaDatasourceMutationdeleteTodoResolver565D7B63",
+            "trace": [
+              "new Resolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/resolver.ts:108:21)",
+              "LambdaDataSource.createResolver (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-appsync/lib/data-source.ts:139:12)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:56:24)",
               "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1103:14)",
               "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
@@ -370,7 +424,7 @@
               "Function.addToPrincipal (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-dynamodb/node_modules/@aws-cdk/aws-iam/lib/grant.ts:164:61)",
               "Table.combinedGrant (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:994:29)",
               "Table.grantFullAccess (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:767:17)",
-              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:60:15)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:68:15)",
               "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1103:14)",
               "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",
@@ -416,10 +470,10 @@
             ]
           }
         ],
-        "/Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/S3Bucket": [
+        "/Step04AppsyncDynamodbStack/AssetParameters/0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3Bucket2C7708CD",
+            "data": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3BucketF43B505B",
             "trace": [
               "new FileAssetParameters (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:169:16)",
@@ -451,10 +505,10 @@
             ]
           }
         ],
-        "/Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/S3VersionKey": [
+        "/Step04AppsyncDynamodbStack/AssetParameters/0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD",
+            "data": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3VersionKey08F67DA3",
             "trace": [
               "new FileAssetParameters (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:169:16)",
@@ -486,10 +540,10 @@
             ]
           }
         ],
-        "/Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/ArtifactHash": [
+        "/Step04AppsyncDynamodbStack/AssetParameters/0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaArtifactHash01B9FC1D",
+            "data": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeArtifactHash707A88DD",
             "trace": [
               "new FileAssetParameters (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:169:16)",
@@ -527,7 +581,7 @@
             "data": "TestTable5769773A",
             "trace": [
               "new Table (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:1180:18)",
-              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:53:23)",
+              "new Step04AppsyncDynamodbStack (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/lib/step04-appsync-dynamodb-stack.ts:61:23)",
               "Object.<anonymous> (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/bin/step04-appsync-dynamodb.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1103:14)",
               "Module.m._compile (/Users/vtech/Desktop/aws-cdk/step04-appsync-dynamodb/node_modules/ts-node/src/index.ts:1056:23)",

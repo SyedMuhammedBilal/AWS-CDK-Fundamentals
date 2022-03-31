@@ -19,7 +19,7 @@
             "ApiId"
           ]
         },
-        "Definition": "type Query {\n    getTodo(id: String): Todo\n}\n\ntype Todo {\n    id: String,\n    description: String\n}\n\ntype Mutation {\n    addTodo(description: String): String\n}"
+        "Definition": "type Todo {\n  id: ID!\n  title: String!\n  done: Boolean!\n}\n\ninput TodoInput {\n  id: ID!\n  title: String!\n  done: Boolean!\n}\n\ntype Query {\n  getTodos: [Todo]\n}\n\ntype Mutation {\n  addTodo(todo: TodoInput!): Todo\n  updateTodo(todo: TodoInput!): Todo\n  deleteTodo(todoId: String!): String\n}"
       },
       "Metadata": {
         "aws:cdk:path": "Step04AppsyncDynamodbStack/Api/Schema"
@@ -121,7 +121,7 @@
         "aws:cdk:path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/Resource"
       }
     },
-    "ApilambdaDatasourceQuerygetTodoResolverEF7C7211": {
+    "ApilambdaDatasourceQuerygetTodosResolver86A5E502": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
@@ -130,7 +130,7 @@
             "ApiId"
           ]
         },
-        "FieldName": "getTodo",
+        "FieldName": "getTodos",
         "TypeName": "Query",
         "DataSourceName": "lambdaDatasource",
         "Kind": "UNIT"
@@ -140,7 +140,7 @@
         "ApiSchema510EECD7"
       ],
       "Metadata": {
-        "aws:cdk:path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodoResolver/Resource"
+        "aws:cdk:path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodosResolver/Resource"
       }
     },
     "ApilambdaDatasourceMutationaddTodoResolver8D834A94": {
@@ -163,6 +163,50 @@
       ],
       "Metadata": {
         "aws:cdk:path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationaddTodoResolver/Resource"
+      }
+    },
+    "ApilambdaDatasourceMutationupdateTodoResolverB15883FB": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ApiF70053CD",
+            "ApiId"
+          ]
+        },
+        "FieldName": "updateTodo",
+        "TypeName": "Mutation",
+        "DataSourceName": "lambdaDatasource",
+        "Kind": "UNIT"
+      },
+      "DependsOn": [
+        "ApilambdaDatasource2C776EE2",
+        "ApiSchema510EECD7"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationupdateTodoResolver/Resource"
+      }
+    },
+    "ApilambdaDatasourceMutationdeleteTodoResolver565D7B63": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "ApiF70053CD",
+            "ApiId"
+          ]
+        },
+        "FieldName": "deleteTodo",
+        "TypeName": "Mutation",
+        "DataSourceName": "lambdaDatasource",
+        "Kind": "UNIT"
+      },
+      "DependsOn": [
+        "ApilambdaDatasource2C776EE2",
+        "ApiSchema510EECD7"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationdeleteTodoResolver/Resource"
       }
     },
     "MyFunctionServiceRole3C357FF2": {
@@ -238,7 +282,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": {
-            "Ref": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3Bucket2C7708CD"
+            "Ref": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3BucketF43B505B"
           },
           "S3Key": {
             "Fn::Join": [
@@ -251,7 +295,7 @@
                       "Fn::Split": [
                         "||",
                         {
-                          "Ref": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD"
+                          "Ref": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3VersionKey08F67DA3"
                         }
                       ]
                     }
@@ -264,7 +308,7 @@
                       "Fn::Split": [
                         "||",
                         {
-                          "Ref": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD"
+                          "Ref": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3VersionKey08F67DA3"
                         }
                       ]
                     }
@@ -282,7 +326,7 @@
         },
         "Environment": {
           "Variables": {
-            "TestTableName": {
+            "TODOS_TABLE": {
               "Ref": "TestTable5769773A"
             }
           }
@@ -298,7 +342,7 @@
       ],
       "Metadata": {
         "aws:cdk:path": "Step04AppsyncDynamodbStack/MyFunction/Resource",
-        "aws:asset:path": "asset.f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
+        "aws:asset:path": "asset.0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae",
         "aws:asset:is-bundled": false,
         "aws:asset:property": "Code"
       }
@@ -359,17 +403,17 @@
     }
   },
   "Parameters": {
-    "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3Bucket2C7708CD": {
+    "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3BucketF43B505B": {
       "Type": "String",
-      "Description": "S3 bucket for asset \"f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba\""
+      "Description": "S3 bucket for asset \"0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae\""
     },
-    "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD": {
+    "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3VersionKey08F67DA3": {
       "Type": "String",
-      "Description": "S3 key for asset version \"f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba\""
+      "Description": "S3 key for asset version \"0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae\""
     },
-    "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaArtifactHash01B9FC1D": {
+    "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeArtifactHash707A88DD": {
       "Type": "String",
-      "Description": "Artifact hash for asset \"f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba\""
+      "Description": "Artifact hash for asset \"0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae\""
     }
   },
   "Conditions": {

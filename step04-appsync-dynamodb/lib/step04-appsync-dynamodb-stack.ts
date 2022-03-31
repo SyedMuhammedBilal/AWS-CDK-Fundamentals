@@ -43,11 +43,19 @@ export class Step04AppsyncDynamodbStack extends cdk.Stack {
     /** @dev describing resolver for data-source */
     lambda_data_source.createResolver({
       typeName: "Query",
-      fieldName: "getTodo"
+      fieldName: "getTodos"
     })
     lambda_data_source.createResolver({
       typeName: "Mutation",
       fieldName: "addTodo"
+    })
+    lambda_data_source.createResolver({
+      typeName: "Mutation",
+      fieldName: "updateTodo"
+    })
+    lambda_data_source.createResolver({
+      typeName: "Mutation",
+      fieldName: "deleteTodo"
     })
 
     const todoTable = new dynamoDB.Table(this, 'TestTable', {
@@ -58,7 +66,6 @@ export class Step04AppsyncDynamodbStack extends cdk.Stack {
     });
 
     todoTable.grantFullAccess(lambdaFuntion);
-    lambdaFuntion.addEnvironment('TestTableName', todoTable.tableName);
-    
+    lambdaFuntion.addEnvironment('TODOS_TABLE', todoTable.tableName);    
   }
 }

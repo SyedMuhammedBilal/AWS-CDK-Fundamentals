@@ -3,13 +3,13 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 
 export async function getTodos() {
     const params = {
-        TableName: process.env.TODOS_TABLE,
+        TableName: process.env.TestTableName,
     }
     try {
         const data = await docClient.scan(params).promise()
-        return data.Items
+        return data.data
     } catch (err) {
         console.log('DynamoDB error: ', err)
-        return null
+        return err
     }
 }

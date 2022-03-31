@@ -3,7 +3,7 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 
 export async function deleteTodo(todoId: string) {
     const params = {
-        TableName: process.env.TODOS_TABLE,
+        TableName: process.env.TestTableName,
         Key: {
             id: todoId
         }
@@ -13,6 +13,6 @@ export async function deleteTodo(todoId: string) {
         return todoId
     } catch (err) {
         console.log('DynamoDB error: ', err)
-        return null
+        return err
     }
 }

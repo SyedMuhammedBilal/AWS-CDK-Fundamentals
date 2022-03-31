@@ -47,7 +47,7 @@
                         "ApiId"
                       ]
                     },
-                    "definition": "type Query {\n    getTodo(id: String): Todo\n}\n\ntype Todo {\n    id: String,\n    description: String\n}\n\ntype Mutation {\n    addTodo(description: String): String\n}"
+                    "definition": "type Todo {\n  id: ID!\n  title: String!\n  done: Boolean!\n}\n\ninput TodoInput {\n  id: ID!\n  title: String!\n  done: Boolean!\n}\n\ntype Query {\n  getTodos: [Todo]\n}\n\ntype Mutation {\n  addTodo(todo: TodoInput!): Todo\n  updateTodo(todo: TodoInput!): Todo\n  deleteTodo(todoId: String!): String\n}"
                   }
                 },
                 "constructInfo": {
@@ -192,13 +192,13 @@
                       "version": "1.149.0"
                     }
                   },
-                  "QuerygetTodoResolver": {
-                    "id": "QuerygetTodoResolver",
-                    "path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodoResolver",
+                  "QuerygetTodosResolver": {
+                    "id": "QuerygetTodosResolver",
+                    "path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodosResolver",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodoResolver/Resource",
+                        "path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/QuerygetTodosResolver/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
                           "aws:cdk:cloudformation:props": {
@@ -208,7 +208,7 @@
                                 "ApiId"
                               ]
                             },
-                            "fieldName": "getTodo",
+                            "fieldName": "getTodos",
                             "typeName": "Query",
                             "dataSourceName": "lambdaDatasource",
                             "kind": "UNIT"
@@ -242,6 +242,72 @@
                               ]
                             },
                             "fieldName": "addTodo",
+                            "typeName": "Mutation",
+                            "dataSourceName": "lambdaDatasource",
+                            "kind": "UNIT"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-appsync.CfnResolver",
+                          "version": "1.149.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-appsync.Resolver",
+                      "version": "1.149.0"
+                    }
+                  },
+                  "MutationupdateTodoResolver": {
+                    "id": "MutationupdateTodoResolver",
+                    "path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationupdateTodoResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationupdateTodoResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "ApiF70053CD",
+                                "ApiId"
+                              ]
+                            },
+                            "fieldName": "updateTodo",
+                            "typeName": "Mutation",
+                            "dataSourceName": "lambdaDatasource",
+                            "kind": "UNIT"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-appsync.CfnResolver",
+                          "version": "1.149.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-appsync.Resolver",
+                      "version": "1.149.0"
+                    }
+                  },
+                  "MutationdeleteTodoResolver": {
+                    "id": "MutationdeleteTodoResolver",
+                    "path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationdeleteTodoResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Step04AppsyncDynamodbStack/Api/lambdaDatasource/MutationdeleteTodoResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "ApiF70053CD",
+                                "ApiId"
+                              ]
+                            },
+                            "fieldName": "deleteTodo",
                             "typeName": "Mutation",
                             "dataSourceName": "lambdaDatasource",
                             "kind": "UNIT"
@@ -422,7 +488,7 @@
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": {
-                        "Ref": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3Bucket2C7708CD"
+                        "Ref": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3BucketF43B505B"
                       },
                       "s3Key": {
                         "Fn::Join": [
@@ -435,7 +501,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD"
+                                      "Ref": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3VersionKey08F67DA3"
                                     }
                                   ]
                                 }
@@ -448,7 +514,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParametersf7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fbaS3VersionKeyB4771AFD"
+                                      "Ref": "AssetParameters0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461aeS3VersionKey08F67DA3"
                                     }
                                   ]
                                 }
@@ -466,7 +532,7 @@
                     },
                     "environment": {
                       "variables": {
-                        "TestTableName": {
+                        "TODOS_TABLE": {
                           "Ref": "TestTable5769773A"
                         }
                       }
@@ -492,13 +558,13 @@
             "id": "AssetParameters",
             "path": "Step04AppsyncDynamodbStack/AssetParameters",
             "children": {
-              "f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba": {
-                "id": "f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
-                "path": "Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba",
+              "0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae": {
+                "id": "0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae",
+                "path": "Step04AppsyncDynamodbStack/AssetParameters/0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae",
                 "children": {
                   "S3Bucket": {
                     "id": "S3Bucket",
-                    "path": "Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/S3Bucket",
+                    "path": "Step04AppsyncDynamodbStack/AssetParameters/0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae/S3Bucket",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.149.0"
@@ -506,7 +572,7 @@
                   },
                   "S3VersionKey": {
                     "id": "S3VersionKey",
-                    "path": "Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/S3VersionKey",
+                    "path": "Step04AppsyncDynamodbStack/AssetParameters/0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae/S3VersionKey",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.149.0"
@@ -514,7 +580,7 @@
                   },
                   "ArtifactHash": {
                     "id": "ArtifactHash",
-                    "path": "Step04AppsyncDynamodbStack/AssetParameters/f7787e0a1ff89cace9b93346e72e293f0cab4db401efaec821f3af85ad5c8fba/ArtifactHash",
+                    "path": "Step04AppsyncDynamodbStack/AssetParameters/0b1d6b4eae6a42ec925690d2ab2fb5c73fd1e1b6840f1ebb986bf7489e3461ae/ArtifactHash",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.149.0"
