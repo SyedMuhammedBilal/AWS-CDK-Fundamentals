@@ -1,12 +1,22 @@
-type Query {
-    getTodo(id: String): Todo
+type Todo {
+    id: ID!
+    title: String!
+    done: Boolean!
 }
 
-type Todo {
-    id: String,
-    description: String
+input TodoInput {
+    id: ID!
+    title: String!
+    done: Boolean!
 }
+
+type Query {
+    getTodos: [Todo]
+}
+
 
 type Mutation {
-    addTodo(description: String): String
+    addTodo(title: TodoInput!): Todo
+    updateTodo(todo: TodoInput!): Todo
+    deleteTodo(todo: TodoInput!): Todo
 }

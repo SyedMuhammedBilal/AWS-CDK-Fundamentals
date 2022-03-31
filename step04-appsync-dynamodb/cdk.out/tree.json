@@ -47,7 +47,7 @@
                         "ApiId"
                       ]
                     },
-                    "definition": "type Query {\n    getTodo(id: String): Todo\n}\n\ntype Todo {\n    id: String,\n    description\n}\n\ntype Mutation {\n    addTodo(description: String): String\n}"
+                    "definition": "type Query {\n    getTodo(id: String): Todo\n}\n\ntype Todo {\n    id: String,\n    description: String\n}\n\ntype Mutation {\n    addTodo(description: String): String\n}"
                   }
                 },
                 "constructInfo": {

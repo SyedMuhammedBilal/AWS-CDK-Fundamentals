@@ -1,50 +1,31 @@
 import * as AWS from 'aws-sdk'
-const docClient = new AWS.DynamoDB.DocumentClient();
+import { addTodo } from './AddTodo'
+import { deleteTodo } from './DeleteTodo'
+import { getTodos } from './GetTodos'
+import { Todo } from './Todo'
+import { updateTodo } from './UpdateTodo'
 
-type AppSyncEvent = {
+export type AppSyncEvent = {
     info: {
         fieldName: string
     }
     arguments: {
-        id: string,
-        description: string
+        todoId: string,
+        todo: Todo
     }
 }
 
 exports.handler = async (event: AppSyncEvent) => {
-    if (event.info.fieldName === 'getTodo') {
-        /** @dev get todo from id */
-        return await getTodo(event.arguments.id);
-    } else if (event.info.fieldName === 'addTodo') {
-        /** @dev add todo with description */
-        return await addTodo(event.arguments.description);
-    } else {
-        return 'server error'
-    }
-}
-
-const addTodo = async (desc: string): Promise<any> => {
-    const params: any = {
-        TableName: process.env.TestTableName,
-        Item: desc
-    }
-    try {
-        const response: any = await docClient.put(params).promise();
-        return response?.Attributes['id'] || '';
-    } catch (error) {
-        return error as any
-    }
-}
-
-const getTodo = async (id: string): Promise<any> => {
-    const params: any = {
-        TableName: process.env.TestTableName,
-        Item: id
-    }
-    try {
-        const response = await docClient.scan(params).promise();
-        return response;
-    } catch (error) {
-        return error as any
+    switch (event.info.fieldName) {
+        case "addTodo":
+            return await addTodo(event.arguments.todo);
+        case "getTodos":
+            return await getTodos();
+        case "deleteTodo":
+            return await deleteTodo(event.arguments.todoId);
+        case "updateTodo":
+            return await updateTodo(event.arguments.todo);
+        default:
+            return null;
     }
 }

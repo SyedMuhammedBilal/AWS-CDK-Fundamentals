@@ -19,7 +19,7 @@
             "ApiId"
           ]
         },
-        "Definition": "type Query {\n    getTodo(id: String): Todo\n}\n\ntype Todo {\n    id: String,\n    description\n}\n\ntype Mutation {\n    addTodo(description: String): String\n}"
+        "Definition": "type Query {\n    getTodo(id: String): Todo\n}\n\ntype Todo {\n    id: String,\n    description: String\n}\n\ntype Mutation {\n    addTodo(description: String): String\n}"
       },
       "Metadata": {
         "aws:cdk:path": "Step04AppsyncDynamodbStack/Api/Schema"
